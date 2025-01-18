@@ -10,8 +10,10 @@ const App = () => {
     <div className="container">
       <Header />
       <div className="container-view">Some activities should be here</div>
-      <CallLog />
-      <footer>
+      <main>
+        <CallLog />
+      </main>
+      <footer className="footer-container">
         <Footer />
       </footer>
     </div>

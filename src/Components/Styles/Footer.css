@@ -5,7 +5,7 @@
   padding: 10px 0;
   background-color: white;
   border-top: 1px solid #ddd;
-  margin-top: auto;
+  margin-top: 43%;
 }
 
 .footer-button {
@@ -29,5 +29,8 @@
   width: 60px; /* Increased from 50px */
   height: 60px; /* Increased from 50px */
   border-radius: 70%;
-  background-color: blue;
+  background-color: rgb(1, 197, 1);
+  border: 1px solid black;
+  padding: 9px;
+  margin-bottom: 44px;
 }

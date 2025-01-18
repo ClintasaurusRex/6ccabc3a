@@ -11,8 +11,10 @@ const Footer = () => {
         <img
           className="footer-button"
           id="dialpad"
-          src="public/emblems/dialpad_20dp_FFFFFF_FILL0_wght400_GRAD0_opsz20.png"
+          src="public/emblems/apps.png"
           alt="dialpad"
+          width="16px"
+          height="16px"
         />
       </button>
       <button className="footer-button">⚙️</button>
