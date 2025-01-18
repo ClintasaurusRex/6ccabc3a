@@ -3,7 +3,7 @@ import mockCalls from "../mockData";
 import "./Styles/CallLog.css";
 import { FaPhoneVolume, FaPhone, FaPhoneSlash } from "react-icons/fa";
 
-const CallLog = () => {
+const CallLog = ({ calls, title }) => {
   // Group calls by date
   const groupedCalls = mockCalls
     .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
@@ -34,7 +34,7 @@ const CallLog = () => {
 
   return (
     <div className="call-log">
-      <h1>Activity</h1>
+      <h1> {title} </h1>
       {Object.keys(groupedCalls).map((date) => (
         <div key={date}>
           <h2 className="date-separator">{date}</h2>
