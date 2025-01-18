@@ -7,7 +7,6 @@
   border-top: 1px solid #ddd;
   margin-top: 43%;
 }
-
 .footer-button {
   display: flex;
   justify-content: center;
@@ -15,13 +14,12 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   border: none;
   font-size: 24px;
   cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: none;
 }
-
 .footer-button:hover {
   background-color: #e0e0e0;
 }
