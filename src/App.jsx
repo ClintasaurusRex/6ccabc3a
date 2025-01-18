@@ -11,7 +11,9 @@ const App = () => {
       <Header />
       <div className="container-view">Some activities should be here</div>
       <CallLog />
-      <Footer />
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 };
