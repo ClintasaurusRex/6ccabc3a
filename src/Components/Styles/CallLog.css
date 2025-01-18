@@ -52,3 +52,25 @@
 .call-log-item .missed-call .details {
   color: red;
 }
+.call-icon-wrapper {
+  display: flex;
+  align-items: center;
+  margin-right: 12px;
+}
+
+.inbound-call-icon {
+  color: #4caf50;
+  transform: rotate(180deg);
+}
+
+.outbound-call-icon {
+  color: #2196f3;
+}
+
+.missed-call-icon {
+  color: #f44336;
+}
+
+.call-icon-wrapper svg {
+  font-size: 20px;
+}

@@ -4104,7 +4104,12 @@
     "prop-types" "^15.6.2"
     "scheduler" "^0.12.0"
 
-"react@^16.0.0", "react@^16.3.1":
+"react-icons@^5.4.0":
+  "integrity" "sha512-7eltJxgVt7X64oHh6wSWNwwbKTCtMfK35hcjvJS0yxEAhPM8oUKdS3+kqaW1vicIltw+kR2unHaa12S9pPALoQ=="
+  "resolved" "https://registry.npmjs.org/react-icons/-/react-icons-5.4.0.tgz"
+  "version" "5.4.0"
+
+"react@*", "react@^16.0.0", "react@^16.3.1":
   "integrity" "sha512-StCz3QY8lxTb5cl2HJxjwLFOXPIFQp+p+hxQfc8WE0QiLfCtIlKj8/+5tjjKm8uSTlAW+fCPaavGFS06V9Ar3A=="
   "resolved" "https://registry.npmjs.org/react/-/react-16.7.0.tgz"
   "version" "16.7.0"

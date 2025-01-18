@@ -5,7 +5,7 @@ const mockCalls = [
     to: 2,
     via: 1,
     duration: 0,
-    is_archived: false,
+    is_archived: true,
     call_type: "answered",
     id: "6685a0df24a7a79ae0c50f8f",
     created_at: "2024-07-03T19:05:03.506Z",
