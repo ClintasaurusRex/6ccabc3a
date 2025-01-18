@@ -1,0 +1,52 @@
+.call-log-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+  margin: 10px 0;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.call-log-item .call-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  font-size: 20px;
+  color: #333;
+  margin-right: 10px;
+}
+
+.call-log-item .call-details {
+  flex: 1;
+}
+
+.call-log-item .call-details .number {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.call-log-item .call-details .details {
+  font-size: 14px;
+  color: #666;
+}
+
+.call-log-item .time {
+  font-size: 14px;
+  color: #999;
+}
+
+.call-log-item .missed-call .call-icon {
+  background-color: #ffe6e6;
+  color: red;
+}
+
+.call-log-item .missed-call .details {
+  color: red;
+}
