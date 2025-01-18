@@ -25,3 +25,9 @@
 .footer-button:hover {
   background-color: #e0e0e0;
 }
+#dialpad {
+  width: 60px; /* Increased from 50px */
+  height: 60px; /* Increased from 50px */
+  border-radius: 70%;
+  background-color: blue;
+}
