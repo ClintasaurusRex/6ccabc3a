@@ -2,6 +2,7 @@ import React from "react";
 import mockCalls from "../mockData";
 import "./Styles/CallLog.css";
 import { FaPhoneVolume, FaPhone, FaPhoneSlash } from "react-icons/fa";
+// import { useEffect } from "react";
 
 const CallLog = ({ calls, title }) => {
   // Group calls by date
