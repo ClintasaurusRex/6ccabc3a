@@ -44,3 +44,5 @@ const mockCalls = [
     created_at: "2024-07-03T22:30:45.123Z",
   },
 ];
+
+export default mockCalls;
