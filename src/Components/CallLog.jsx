@@ -4,6 +4,21 @@ import "./Styles/CallLog.css";
 import { FaPhoneVolume, FaPhone, FaPhoneSlash } from "react-icons/fa";
 
 const CallLog = () => {
+  // Group calls by date
+  const groupedCalls = mockCalls.reduce((acc, call) => {
+    const date = new Date(call.created_at).toLocaleDateString([], {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+    if (!acc[date]) {
+      acc[date] = [];
+    }
+    acc[date].push(call);
+    return acc;
+  }, {});
+
+  // Get the correct call icon
   const getCallIcon = (call) => {
     if (call.call_type === "missed") {
       return <FaPhoneSlash className="missed-call-icon" />;
@@ -18,19 +33,24 @@ const CallLog = () => {
   return (
     <div className="call-log">
       <h1>Activity</h1>
-      {mockCalls.map((call) => (
-        <div key={call.id} className="call-log-item">
-          <div className="call-icon-wrapper">{getCallIcon(call)}</div>
-          <div className="call-details">
-            <div className="number">+{call.from}</div>
-            <div className="details">tried to call on {call.to}</div>
-          </div>
-          <div className="time">
-            {new Date(call.created_at).toLocaleTimeString([], {
-              hour: "2-digit",
-              minute: "2-digit",
-            })}
-          </div>
+      {Object.keys(groupedCalls).map((date) => (
+        <div key={date}>
+          <h2 className="date-separator">{date}</h2>
+          {groupedCalls[date].map((call) => (
+            <div key={call.id} className="call-log-item">
+              <div className="call-icon-wrapper">{getCallIcon(call)}</div>
+              <div className="call-details">
+                <div className="number">+{call.from}</div>
+                <div className="details">tried to call on {call.to}</div>
+              </div>
+              <div className="time">
+                {new Date(call.created_at).toLocaleTimeString([], {
+                  hour: "2-digit",
+                  minute: "2-digit",
+                })}
+              </div>
+            </div>
+          ))}
         </div>
       ))}
     </div>

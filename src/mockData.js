@@ -8,7 +8,7 @@ const mockCalls = [
     is_archived: true,
     call_type: "answered",
     id: "6685a0df24a7a79ae0c50f8f",
-    created_at: "2024-07-03T19:05:03.506Z",
+    created_at: "2024-04-03T19:05:03.506Z",
   },
   {
     direction: "outbound",
@@ -30,7 +30,7 @@ const mockCalls = [
     is_archived: false,
     call_type: "missed",
     id: "6685c0df24a7a79ae0d50f8g",
-    created_at: "2024-07-03T21:15:03.506Z",
+    created_at: "2024-06-03T21:15:03.506Z",
   },
   {
     direction: "outbound",
@@ -41,7 +41,7 @@ const mockCalls = [
     is_archived: true,
     call_type: "voicemail",
     id: "6685d79524326ad725e48041",
-    created_at: "2024-07-03T22:30:45.123Z",
+    created_at: "2024-03-03T22:30:45.123Z",
   },
 ];
 

@@ -74,3 +74,12 @@
 .call-icon-wrapper svg {
   font-size: 20px;
 }
+.date-separator {
+  font-size: 8px;
+  font-weight: bold;
+  color: #999;
+  margin: 15px 0 10px 3%;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+}
