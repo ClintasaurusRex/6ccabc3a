@@ -34,3 +34,12 @@
   padding: 9px;
   margin-bottom: 44px;
 }
+#green-dot {
+  height: 25px;
+  width: 25px;
+  border: 1px solid #f0f0f0;
+  color: rgb(1, 197, 1);
+  padding: 10px;
+  margin-top: 3px;
+  background-color: #ffffff;
+}

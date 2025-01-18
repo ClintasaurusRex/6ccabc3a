@@ -18,7 +18,9 @@ const Footer = () => {
         />
       </button>
       <button className="footer-button">⚙️</button>
-      <button className="footer-button">⚙️</button>
+      <button className="footer-button" id="green-dot">
+        ●
+      </button>
     </footer>
   );
 };
