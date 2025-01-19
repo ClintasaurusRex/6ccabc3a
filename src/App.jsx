@@ -13,7 +13,7 @@ const App = () => {
     <div className="container">
       <Header />
       <Calls />
-      <div className="container-view">Some activities should be here</div>
+      {/* <div className="container-view">Some activities should be here</div> */}
       <main className="content">
         <CallLog />
         <CallItem />

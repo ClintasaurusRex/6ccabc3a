@@ -6,23 +6,25 @@ const CallItem = ({ call, onArchive, onSelect }) => {
   if (!call) return null;
 
   return (
-    <div className="call-item" onClick={() => onSelect(call)}>
-      <div className="call-info">
-        <span className={`call-type ${call.call_type}`}>{call.call_type.toUpperCase()}</span>
-        <span className="call-direction">{call.direction}</span>
-        <span className="call-number">From: {call.from}</span>
-        <span className="call-number">To: {call.to}</span>
-        <span className="call-duration">Duration: {call.duration}s</span>
+    <div className="calls-container">
+      <div className="call-item" onClick={() => onSelect(call)}>
+        <div className="call-info">
+          <span className={`call-type ${call.call_type}`}>{call.call_type.toUpperCase()}</span>
+          <span className="call-direction">{call.direction}</span>
+          <span className="call-number">From: {call.from}</span>
+          <span className="call-number">To: {call.to}</span>
+          <span className="call-duration">Duration: {call.duration}s</span>
+        </div>
+        <button
+          className="archive-button"
+          onClick={(e) => {
+            e.stopPropagation();
+            onArchive(call.id);
+          }}
+        >
+          {call.is_archived ? "Unarchive" : "Archive"}
+        </button>
       </div>
-      <button
-        className="archive-button"
-        onClick={(e) => {
-          e.stopPropagation();
-          onArchive(call.id);
-        }}
-      >
-        {call.is_archived ? "Unarchive" : "Archive"}
-      </button>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function Calls() {
+function Calls(props) {
   const [calls, setCalls] = useState([]);
   const [activeTab, setActiveTab] = useState("activity");
   const [selectedCall, setSelectedCall] = useState(null);
