@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import "./Styles/CallLog.css";
 import useApi from "./hooks/useApi";
 import { useCallIcon } from "./hooks/useCallIcon";
 import { useGrouped } from "./hooks/useGrouped";
+import "./Styles/CallLog.css";
 
 const CallLog = () => {
   // const [calls, setCalls] = useState([]);
