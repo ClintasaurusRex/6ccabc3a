@@ -1,134 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
 
-.call-log-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 15px;
-  margin: 10px 0;
-  background-color: #ffffff;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  width: 85%;
-  margin-left: 3%;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.7s forwards;
-}
 .call-log {
   transition: opacity 0.3s ease-in-out;
-}
-
-.call-log-item .call-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #f0f0f0;
-  font-size: 20px;
-  color: #333;
-  margin-right: 10px;
-}
-
-/* This will align all of the 3 dots perfectly REMEMBER THIS! */
-.call-log-item .call-details {
-  flex: 1;
-}
-
-.call-log-item .call-details .number {
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.call-log-item .call-details .details {
-  font-size: 14px;
-  color: #666;
-}
-
-.call-log-item .time {
-  font-size: 14px;
-  color: #999;
-}
-
-.call-log-item .missed-call .call-icon {
-  background-color: #ffe6e6;
-  color: red;
-}
-
-.call-log-item .missed-call .details {
-  color: red;
-}
-.call-icon-wrapper {
-  display: flex;
-  align-items: center;
-  margin-right: 12px;
-}
-
-.inbound-call-icon {
-  color: #4caf50;
-  transform: rotate(180deg);
-}
-
-.outbound-call-icon {
-  color: #2196f3;
-}
-
-.missed-call-icon {
-  color: #f44336;
-}
-
-.call-icon-wrapper svg {
-  font-size: 20px;
-}
-.date-separator {
-  font-size: 8px;
-  font-weight: bold;
-  color: #999;
-  margin: 15px 0 10px 3%;
-  text-transform: uppercase;
-  display: flex;
-  justify-content: center;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.7s forwards;
-}
-.button-icon {
-  width: 20px;
-  height: 20px;
-  margin-right: 8px;
-  vertical-align: middle;
-}
-.archive-button button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-}
-
-.archive-icon {
-  width: 18px;
-  height: 18px;
-  display: flex;
-}
-.act-arch-btns {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-
-.archive-all {
-  width: 94%;
-  margin-left: 11px;
-  padding: 10px;
-  margin-top: 6px;
-  border: 2px solid #e0e0e0;
-  background: none;
-  border-radius: 5px;
-  text-align: start;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
 }
 
 button {
@@ -142,13 +15,13 @@ button {
   cursor: pointer;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.loading,
+.error {
+  text-align: center;
+  padding: 20px;
+  font-size: 16px;
+}
+
+.error {
+  color: #f44336;
 }

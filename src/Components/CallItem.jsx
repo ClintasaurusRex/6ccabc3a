@@ -1,4 +1,5 @@
 import React from "react";
+import "./Styles/CallItem.css";
 
 const CallItem = ({ call, onToggleArchive, getCallIcon }) => {
   return (

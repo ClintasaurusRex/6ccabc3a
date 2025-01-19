@@ -1,5 +1,6 @@
+import "./Styles/CallGroup.css";
 import React from "react";
-import CallItem from "./CallItem";
+import CallItem from "./CallItem.jsx";
 
 const CallGroup = ({ date, calls, onToggleArchive, getCallIcon }) => {
   return (

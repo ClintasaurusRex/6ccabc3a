@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./Styles/TabBar.css";
 const TabBar = ({ activeTab, setActiveTab, onArchiveAll, onUnarchiveAll }) => {
   return (
     <div className="tabs">
