@@ -20,9 +20,7 @@
   cursor: pointer;
   box-shadow: none;
 }
-.footer-button:hover {
-  background-color: #e0e0e0;
-}
+
 #dialpad {
   width: 53px;
   height: 53px;
@@ -40,4 +38,34 @@
   padding: 10px;
   margin-top: 3px;
   background-color: #ffffff;
+}
+.missed-calls-badge {
+  border: 1px solid red;
+  border-radius: 70%;
+  border-width: 7px;
+
+  background-color: red;
+  color: white;
+}
+
+.phone-icon-wrapper {
+  position: relative;
+}
+
+.missed-calls-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  background-color: red;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }

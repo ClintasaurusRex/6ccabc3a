@@ -1,11 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Styles/Footer.css";
-// import dialpadIcon from "../../public/emblems/dialpad_24dp_75FB4C_FILL0_wght400_GRAD0_opsz24.svg";
 
 const Footer = () => {
+  const [missedCallsCount, setMissedCallsCount] = useState(0);
+
+  useEffect(() => {
+    const fetchMissedCalls = async () => {
+      const response = await fetch("https://aircall-api.onrender.com/activities");
+      const data = await response.json();
+      const missedCount = data.filter(
+        (call) => call.call_type === "missed" && !call.is_archived
+      ).length;
+      setMissedCallsCount(missedCount);
+    };
+
+    fetchMissedCalls();
+  }, []);
+
   return (
     <footer className="footer">
-      <button className="footer-button">📞</button>
+      <div className="button-container">
+        <div className="phone-icon-wrapper">
+          <button className="footer-button phone-button">📞</button>
+          {missedCallsCount > 0 && <span className="missed-calls-badge">{missedCallsCount}</span>}
+        </div>
+      </div>
       <button className="footer-button">👤</button>
       <button className="footer-button">
         <img
@@ -26,3 +45,8 @@ const Footer = () => {
 };
 
 export default Footer;
+// {missedCallsCount > 0 && (
+//   <span className="missed-calls-badge">
+//     <strong>{missedCallsCount}</strong>
+//   </span>
+// )}
