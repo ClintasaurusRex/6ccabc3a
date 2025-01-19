@@ -1,6 +1,10 @@
 import React from "react";
 import "./Styles/CallItem.css";
 
+// call - Comes from the useApi hook
+// onToggleArchive - Also from useApi hook, specifically the toggleArchive function
+// getCallIcon - Comes from the useCallIcon hook
+
 const CallItem = ({ call, onToggleArchive, getCallIcon }) => {
   return (
     <div className="call-log-item">
