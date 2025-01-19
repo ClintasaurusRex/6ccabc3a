@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import "./Styles/CallLog.css";
+
 import useApi from "./hooks/useApi";
-import { useCallIcon } from "./hooks/useCallIcon";
-import { useGrouped } from "./hooks/useGrouped";
 import TabBar from "./TabBar.jsx";
 import CallGroup from "./CallGroup.jsx";
-import "./Styles/CallLog.css";
+import { useCallIcon } from "./hooks/useCallIcon";
+import { useGrouped } from "./hooks/useGrouped";
 
 const CallLog = () => {
   const [activeTab, setActiveTab] = useState("activity");
