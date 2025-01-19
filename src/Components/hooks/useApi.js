@@ -1,9 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 
 const useApi = () => {
   const [calls, setCalls] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const missedCallsCount = useMemo(() => {
+    return calls.filter((call) => call.call_type === "missed" && !call.is_archived).length;
+  }, [calls]);
 
   const fetchCalls = async () => {
     try {
@@ -58,6 +62,7 @@ const useApi = () => {
     toggleArchive,
     archiveAll,
     unarchiveAll,
+    missedCallsCount,
   };
 };
 

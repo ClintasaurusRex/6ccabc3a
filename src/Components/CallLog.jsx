@@ -9,7 +9,8 @@ import "./Styles/CallLog.css";
 const CallLog = () => {
   const [activeTab, setActiveTab] = useState("activity");
   const { getCallIcon } = useCallIcon();
-  const { calls, loading, error, toggleArchive, archiveAll, unarchiveAll } = useApi();
+  const { calls, loading, error, toggleArchive, archiveAll, unarchiveAll, missedCallsCount } =
+    useApi();
   const groupedCalls = useGrouped(calls, activeTab);
 
   if (loading) return <div className="loading">Loading calls...</div>;
@@ -22,19 +23,22 @@ const CallLog = () => {
         setActiveTab={setActiveTab}
         onArchiveAll={archiveAll}
         onUnarchiveAll={unarchiveAll}
+        missedCallsCount={missedCallsCount}
       />
-
-      {Object.entries(groupedCalls).map(([date, calls]) => (
-        <CallGroup
-          key={date}
-          date={date}
-          calls={calls}
-          onToggleArchive={toggleArchive}
-          getCallIcon={getCallIcon}
-        />
-      ))}
+      {Object.keys(groupedCalls).length === 0 ? (
+        <div className="empty-state">No calls to display</div>
+      ) : (
+        Object.entries(groupedCalls).map(([date, calls]) => (
+          <CallGroup
+            key={date}
+            date={date}
+            calls={calls}
+            onToggleArchive={toggleArchive}
+            getCallIcon={getCallIcon}
+          />
+        ))
+      )}
     </div>
   );
 };
-
 export default CallLog;

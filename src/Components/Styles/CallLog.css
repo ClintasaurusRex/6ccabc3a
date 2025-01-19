@@ -74,3 +74,12 @@ button {
 .call-icon-wrapper svg {
   font-size: 20px;
 }
+.empty-state {
+  font-family: "Jersey 15", serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  color: #666;
+  font-size: 2.1rem;
+}
