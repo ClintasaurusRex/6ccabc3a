@@ -62,17 +62,3 @@ const useApi = () => {
 };
 
 export default useApi;
-//   const [missed, setMissedCall] = useState(null);
-//   try {
-//     const res = await fetch(`https://aircall-api.onrender.com/activities`);
-//     const data = await res.json();
-//     if (!data) throw new Error(data.message);
-//     setMissedCall(data);
-//   } catch (err) {
-//     console.log(err.message);
-//   } finally {
-//     console.log("loaded");
-//   }
-//   return { missed, setMissedCall };
-// };
-// export default useApi;

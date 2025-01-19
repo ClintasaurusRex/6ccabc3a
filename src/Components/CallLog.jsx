@@ -5,9 +5,8 @@ import { useGrouped } from "./hooks/useGrouped";
 import "./Styles/CallLog.css";
 
 const CallLog = () => {
-  // const [calls, setCalls] = useState([]);
   const [activeTab, setActiveTab] = useState("activity");
-  const [selectedCall, setSelectedCall] = useState(null);
+
   const { getCallIcon } = useCallIcon();
   const { calls, loading, error, toggleArchive, archiveAll, unarchiveAll } = useApi();
   const groupedCalls = useGrouped(calls, activeTab);

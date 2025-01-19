@@ -45,8 +45,3 @@ const Footer = () => {
 };
 
 export default Footer;
-// {missedCallsCount > 0 && (
-//   <span className="missed-calls-badge">
-//     <strong>{missedCallsCount}</strong>
-//   </span>
-// )}
