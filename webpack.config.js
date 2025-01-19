@@ -31,13 +31,4 @@ module.exports = {
       filename: "./index.html",
     }),
   ],
-  resolve: {
-    extensions: [".js", ".jsx"], // Automatically resolve these extensions
-  },
-  output: {
-    publicPath: "/", // Ensures correct asset paths
-  },
-  devServer: {
-    historyApiFallback: true, // Support for client-side routing
-  },
 };
