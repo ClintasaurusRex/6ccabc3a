@@ -25,3 +25,52 @@ button {
 .error {
   color: #f44336;
 }
+.call-log-item .call-details {
+  flex: 1;
+}
+
+.call-log-item .call-details .number {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.call-log-item .call-details .details {
+  font-size: 14px;
+  color: #666;
+}
+
+.call-log-item .time {
+  font-size: 14px;
+  color: #999;
+}
+
+.call-log-item .missed-call .call-icon {
+  background-color: #ffe6e6;
+  color: red;
+}
+
+.call-log-item .missed-call .details {
+  color: red;
+}
+.call-icon-wrapper {
+  display: flex;
+  align-items: center;
+  margin-right: 12px;
+}
+
+.inbound-call-icon {
+  color: #4caf50;
+  transform: rotate(180deg);
+}
+
+.outbound-call-icon {
+  color: #2196f3;
+}
+
+.missed-call-icon {
+  color: #f44336;
+}
+
+.call-icon-wrapper svg {
+  font-size: 20px;
+}
