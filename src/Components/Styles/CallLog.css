@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+
 .call-log-item {
   display: flex;
   align-items: center;
@@ -128,6 +130,18 @@
   text-align: start;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
 }
+
+button {
+  font-family: "Jersey 15", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  border: 2px solid #e0e0e0;
+  background: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
