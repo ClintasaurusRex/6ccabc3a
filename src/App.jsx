@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 // import mockCalls from "./mockData.js";
-import Calls from "./Components/Calls.jsx";
+// import Calls from "./Components/Calls.jsx";
 import Header from "./Header.jsx";
 import CallLog from "./Components/CallLog.jsx";
 import Footer from "./Components/Footer.jsx";
@@ -20,9 +20,9 @@ const App = () => {
         <CallLog />
       </main>
 
-      <footer className="footer-container">
-        <Footer />
-      </footer>
+      <Footer />
+      {/* <footer className="footer-container">
+      </footer> */}
     </div>
   );
 };

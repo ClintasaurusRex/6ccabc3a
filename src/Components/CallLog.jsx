@@ -32,7 +32,7 @@ const CallLog = () => {
           {activeTab === "activity" ? (
             <button className="archive-all" onClick={archiveAll}>
               <img className="button-icon" src="public/emblems/archive.png" alt="activitiy" />
-              Archive All
+              Archive all calls
             </button>
           ) : (
             <button className="archive-all" onClick={unarchiveAll}>

@@ -24,13 +24,13 @@
   background-color: #e0e0e0;
 }
 #dialpad {
-  width: 60px; /* Increased from 50px */
-  height: 60px; /* Increased from 50px */
+  width: 53px;
+  height: 53px;
   border-radius: 70%;
   background-color: rgb(1, 197, 1);
   border: 1px solid black;
-  padding: 9px;
-  margin-bottom: 44px;
+  padding: 6px;
+  margin-bottom: 5px;
 }
 #green-dot {
   height: 25px;
