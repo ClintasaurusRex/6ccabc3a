@@ -3,6 +3,8 @@ import "./Styles/CallLog.css";
 import useApi from "./hooks/useApi";
 import { useCallIcon } from "./hooks/useCallIcon";
 import { useGrouped } from "./hooks/useGrouped";
+// import Buttons from "./Buttons";
+
 const CallLog = () => {
   // const [calls, setCalls] = useState([]);
   const [activeTab, setActiveTab] = useState("activity");
@@ -22,12 +24,16 @@ const CallLog = () => {
   return (
     <div className="call-log">
       <div className="tabs">
-        <button onClick={() => setActiveTab("activity")}>All Calls</button>
+        {/* <Buttons activeTab={activeTab} setActiveTab={setActiveTab} /> */}
+        <button onClick={() => setActiveTab("activity")}> Activity Feed</button>
         <button onClick={() => setActiveTab("archived")}>Archived</button>
 
         <div className="actions">
           {activeTab === "activity" ? (
-            <button onClick={archiveAll}>Archive All</button>
+            <button onClick={archiveAll}>
+              <img className="button-icon" src="public/emblems/archive.png" alt="activitiy" />
+              Archive All
+            </button>
           ) : (
             <button onClick={unarchiveAll}>Unarchive All</button>
           )}
@@ -44,12 +50,6 @@ const CallLog = () => {
                 <div className="number">+{call.from}</div>
                 <div className="details">tried to call on {call.to}</div>
               </div>
-              <div className="time">
-                {new Date(call.created_at).toLocaleTimeString([], {
-                  hour: "2-digit",
-                  minute: "2-digit",
-                })}
-              </div>
               <div className="archive-button">
                 <button
                   onClick={(e) => {
@@ -57,8 +57,18 @@ const CallLog = () => {
                     toggleArchive(call.id);
                   }}
                 >
-                  {call.is_archived ? "Unarchive" : "Archive"}
+                  <img
+                    src="public/emblems/verticalDots.png"
+                    alt={call.is_archived ? "Unarchive" : "Archive"}
+                    className="archive-icon"
+                  />
                 </button>
+              </div>
+              <div className="time">
+                {new Date(call.created_at).toLocaleTimeString([], {
+                  hour: "2-digit",
+                  minute: "2-digit",
+                })}
               </div>
             </div>
           ))}
@@ -69,3 +79,16 @@ const CallLog = () => {
 };
 
 export default CallLog;
+
+{
+  /* <div className="archive-button">
+<button
+  onClick={(e) => {
+    e.stopPropagation();
+    toggleArchive(call.id);
+  }}
+>
+  {call.is_archived ? "Unarchive" : "Archive"}
+</button>
+</div> */
+}
