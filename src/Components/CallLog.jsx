@@ -32,12 +32,16 @@ const CallLog = () => {
 
         <div className="actions">
           {activeTab === "activity" ? (
-            <button id="archive-all" onClick={archiveAll}>
+            <button className="archive-all" onClick={archiveAll}>
               <img className="button-icon" src="public/emblems/archive.png" alt="activitiy" />
               Archive All
             </button>
           ) : (
-            <button onClick={unarchiveAll}>Unarchive All</button>
+            <button className="archive-all" onClick={unarchiveAll}>
+              {" "}
+              <img className="button-icon" src="public/emblems/archive.png" alt="activitiy" />
+              Unarchive All
+            </button>
           )}
         </div>
       </div>
