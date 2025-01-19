@@ -13,8 +13,9 @@ const App = () => {
       <main className="content">
         <CallLog />
       </main>
-
-      <Footer />
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 };

@@ -1,5 +1,4 @@
 .date-separator {
-  font-size: 8px;
   font-weight: bold;
   color: #999;
   margin: 15px 0 10px 3%;
@@ -9,6 +8,10 @@
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 0.7s forwards;
+  font-family: "Jersey 15", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
 }
 
 @keyframes fadeInUp {
