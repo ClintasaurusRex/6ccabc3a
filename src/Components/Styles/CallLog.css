@@ -33,6 +33,7 @@
   margin-right: 10px;
 }
 
+/* This will align all of the 3 dots perfectly REMEMBER THIS! */
 .call-log-item .call-details {
   flex: 1;
 }
@@ -111,7 +112,6 @@
   width: 18px;
   height: 18px;
   display: flex;
-  /* vertical-align: middle; */
 }
 .act-arch-btns {
   display: flex;
