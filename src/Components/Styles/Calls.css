@@ -11,3 +11,7 @@
 .archive-button:hover {
   text-decoration: underline;
 }
+.tabs {
+  display: flex;
+  justify-content: space-between;
+}

@@ -60,14 +60,14 @@ function Calls(props) {
       <div className="tabs">
         <button onClick={() => setActiveTab("activity")}>All Calls</button>
         <button onClick={() => setActiveTab("archived")}>Archived</button>
-      </div>
 
-      <div className="actions">
-        {activeTab === "activity" ? (
-          <button onClick={archiveAll}>Archive All</button>
-        ) : (
-          <button onClick={unarchiveAll}>Unarchive All</button>
-        )}
+        <div className="actions">
+          {activeTab === "activity" ? (
+            <button onClick={archiveAll}>Archive All</button>
+          ) : (
+            <button onClick={unarchiveAll}>Unarchive All</button>
+          )}
+        </div>
       </div>
 
       <div className="calls-list">
