@@ -21,7 +21,7 @@ const CallItem = ({ call, onToggleArchive, getCallIcon }) => {
           }}
         >
           <img
-            src="public/emblems/verticalDots.png"
+            src="src/assets/emblems/verticalDots.png"
             alt={call.is_archived ? "Unarchive" : "Archive"}
             className="archive-icon"
           />

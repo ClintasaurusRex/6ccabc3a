@@ -12,12 +12,12 @@ const TabBar = ({ activeTab, setActiveTab, onArchiveAll, onUnarchiveAll }) => {
       <div className="actions">
         {activeTab === "activity" ? (
           <button className="archive-all" onClick={onArchiveAll}>
-            <img className="button-icon" src="public/emblems/archive.png" alt="activity" />
+            <img className="button-icon" src="src/assets/emblems/archive.png" alt="activity" />
             Archive all calls
           </button>
         ) : (
           <button className="archive-all" onClick={onUnarchiveAll}>
-            <img className="button-icon" src="public/emblems/archive.png" alt="activity" />
+            <img className="button-icon" src="src/assets/emblems/archive.png" alt="activity" />
             Unarchive All
           </button>
         )}

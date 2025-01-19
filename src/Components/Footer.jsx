@@ -30,7 +30,7 @@ const Footer = () => {
         <img
           className="footer-button"
           id="dialpad"
-          src="public/emblems/apps.png"
+          src="src/assets/emblems/apps.png"
           alt="dialpad"
           width="16px"
           height="16px"
