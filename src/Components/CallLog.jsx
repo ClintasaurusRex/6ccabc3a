@@ -3,7 +3,6 @@ import "./Styles/CallLog.css";
 import useApi from "./hooks/useApi";
 import { useCallIcon } from "./hooks/useCallIcon";
 import { useGrouped } from "./hooks/useGrouped";
-// import Buttons from "./Buttons";
 
 const CallLog = () => {
   // const [calls, setCalls] = useState([]);
@@ -24,7 +23,6 @@ const CallLog = () => {
   return (
     <div className="call-log">
       <div className="tabs">
-        {/* <Buttons activeTab={activeTab} setActiveTab={setActiveTab} /> */}
         <div className="act-arch-btns">
           <button onClick={() => setActiveTab("activity")}> Activity Feed</button>
           <button onClick={() => setActiveTab("archived")}>Archived</button>
