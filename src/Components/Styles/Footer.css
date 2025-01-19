@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 10px 0;
+  /* padding: 10px 0; */
   background-color: white;
   border-top: 1px solid #ddd;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for separation */
@@ -22,8 +22,8 @@
 }
 
 #dialpad {
-  width: 53px;
-  height: 53px;
+  width: 73px;
+  height: 73px;
   border-radius: 70%;
   background-color: rgb(1, 197, 1);
   border: 1px solid black;
