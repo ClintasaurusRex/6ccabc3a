@@ -1,0 +1,23 @@
+.date-separator {
+  font-size: 8px;
+  font-weight: bold;
+  color: #999;
+  margin: 15px 0 10px 3%;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.7s forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
