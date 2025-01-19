@@ -25,12 +25,14 @@ const CallLog = () => {
     <div className="call-log">
       <div className="tabs">
         {/* <Buttons activeTab={activeTab} setActiveTab={setActiveTab} /> */}
-        <button onClick={() => setActiveTab("activity")}> Activity Feed</button>
-        <button onClick={() => setActiveTab("archived")}>Archived</button>
+        <div className="act-arch-btns">
+          <button onClick={() => setActiveTab("activity")}> Activity Feed</button>
+          <button onClick={() => setActiveTab("archived")}>Archived</button>
+        </div>
 
         <div className="actions">
           {activeTab === "activity" ? (
-            <button onClick={archiveAll}>
+            <button id="archive-all" onClick={archiveAll}>
               <img className="button-icon" src="public/emblems/archive.png" alt="activitiy" />
               Archive All
             </button>
