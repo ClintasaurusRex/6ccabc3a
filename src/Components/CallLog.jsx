@@ -4,7 +4,7 @@ import "./Styles/CallLog.css";
 import { FaPhoneVolume, FaPhone, FaPhoneSlash } from "react-icons/fa";
 import useApi from "./hooks/useApi";
 
-const CallLog = () => {
+const CallLog = ({ showArchived = false }) => {
   const { calls, loading, error } = useApi();
 
   if (loading) return <div>Loading calls...</div>;
