@@ -2,7 +2,6 @@ import React from "react";
 import "./Styles/CallItem.css";
 
 const CallItem = ({ call, onArchive, onSelect }) => {
-  // Add prop validation
   if (!call) return null;
 
   return (
@@ -30,7 +29,6 @@ const CallItem = ({ call, onArchive, onSelect }) => {
 };
 
 export default CallItem;
-
 // import { useEffect } from "react";
 
 // const CallItem = () => {

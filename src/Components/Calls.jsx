@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useCallIcon } from "./hooks/useCallIcon";
 
 function Calls(props) {
   const [calls, setCalls] = useState([]);
   const [activeTab, setActiveTab] = useState("activity");
   const [selectedCall, setSelectedCall] = useState(null);
+  const { getCallIcon } = useCallIcon();
 
   useEffect(() => {
     fetchCalls();
@@ -54,7 +56,7 @@ function Calls(props) {
   return (
     <div className="calls-container">
       <div className="tabs">
-        <button onClick={() => setActiveTab("activity")}>Activity Feed</button>
+        <button onClick={() => setActiveTab("activity")}>All Calls</button>
         <button onClick={() => setActiveTab("archived")}>Archived</button>
       </div>
 
@@ -69,6 +71,7 @@ function Calls(props) {
       <div className="calls-list">
         {displayCalls.map((call) => (
           <div key={call.id} className="call-item" onClick={() => setSelectedCall(call)}>
+            {getCallIcon(call)}
             <span>{call.direction}</span>
             <span>From: {call.from}</span>
             <span>To: {call.to}</span>
@@ -102,7 +105,6 @@ function Calls(props) {
 }
 
 export default Calls;
-
 // import React from "react";
 
 // // import { useState } from "react";
