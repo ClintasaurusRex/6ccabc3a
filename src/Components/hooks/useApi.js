@@ -1,14 +1,17 @@
 import { useState, useEffect, useMemo } from "react";
 
 const useApi = () => {
+  // State management for call data, loading and error
   const [calls, setCalls] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // Memo calc of non-archived missed calls - needs a re look
   const missedCallsCount = useMemo(() => {
     return calls.filter((call) => call.call_type === "missed" && !call.is_archived).length;
   }, [calls]);
 
+  // Fetches all the calls from the API and updates the calls state :)
   const fetchCalls = async () => {
     try {
       setLoading(true);
@@ -22,6 +25,7 @@ const useApi = () => {
     }
   };
 
+  // Toggles the archive status of a single call by ID
   const toggleArchive = async (callId) => {
     try {
       const call = calls.find((c) => c.id === callId);
@@ -36,6 +40,7 @@ const useApi = () => {
     }
   };
 
+  // Archives all non-archived calls in the list
   const archiveAll = async () => {
     const promises = calls
       .filter((call) => !call.is_archived)
@@ -44,12 +49,14 @@ const useApi = () => {
     fetchCalls();
   };
 
+  // Unarchives all archived calls in the list
   const unarchiveAll = async () => {
     const promises = calls.filter((call) => call.is_archived).map((call) => toggleArchive(call.id));
     await Promise.all(promises);
     fetchCalls();
   };
 
+  // Initial fetch of calls when component mounts :)
   useEffect(() => {
     fetchCalls();
   }, []);
