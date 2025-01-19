@@ -24,12 +24,30 @@ const useApi = () => {
 
   const missedCalls = calls.filter((call) => call.call_type === "missed");
 
+  const archiveCall = async (callId, archiveState) => {
+    try {
+      const response = await fetch(`https://aircall-api.onrender.com/activities/${callId}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ is_archived: archiveState }),
+      });
+      if (response.ok) {
+        fetchCalls(); // Refresh the calls list after successful archive
+      }
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
   return {
     calls,
     missedCalls,
     loading,
     error,
     setCalls,
+    archiveCall,
   };
 };
 
