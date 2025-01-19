@@ -88,6 +88,9 @@
   text-transform: uppercase;
   display: flex;
   justify-content: center;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.7s forwards;
 }
 .button-icon {
   width: 20px;
