@@ -1,72 +1,23 @@
 import React, { useState, useEffect } from "react";
 import "./Styles/CallLog.css";
-import { FaArchive } from "react-icons/fa";
+import useApi from "./hooks/useApi";
 import { useCallIcon } from "./hooks/useCallIcon";
-
+import { useGrouped } from "./hooks/useGrouped";
 const CallLog = () => {
-  const [calls, setCalls] = useState([]);
+  // const [calls, setCalls] = useState([]);
   const [activeTab, setActiveTab] = useState("activity");
   const [selectedCall, setSelectedCall] = useState(null);
   const { getCallIcon } = useCallIcon();
+  const { calls, loading, error, toggleArchive, archiveAll, unarchiveAll } = useApi();
+  const groupedCalls = useGrouped(calls, activeTab);
 
-  useEffect(() => {
-    fetchCalls();
-  }, []);
+  if (loading) {
+    return <div className="loading">Loading calls...</div>;
+  }
 
-  const fetchCalls = async () => {
-    try {
-      const response = await fetch("https://aircall-api.onrender.com/activities");
-      const data = await response.json();
-      setCalls(data);
-    } catch (error) {
-      console.error("Error fetching calls:", error);
-    }
-  };
-
-  const toggleArchive = async (callId) => {
-    try {
-      const call = calls.find((c) => c.id === callId);
-      await fetch(`https://aircall-api.onrender.com/activities/${callId}`, {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ is_archived: !call.is_archived }),
-      });
-      fetchCalls();
-    } catch (error) {
-      console.error("Error toggling archive:", error);
-    }
-  };
-
-  const archiveAll = async () => {
-    const promises = calls
-      .filter((call) => !call.is_archived)
-      .map((call) => toggleArchive(call.id));
-    await Promise.all(promises);
-    fetchCalls();
-  };
-
-  const unarchiveAll = async () => {
-    const promises = calls.filter((call) => call.is_archived).map((call) => toggleArchive(call.id));
-    await Promise.all(promises);
-    fetchCalls();
-  };
-
-  const displayCalls = calls.filter((call) => {
-    const filtered = activeTab === "activity" ? !call.is_archived : call.is_archived;
-    return filtered;
-  });
-  const groupedCalls = displayCalls.reduce((acc, call) => {
-    const date = new Date(call.created_at).toLocaleDateString([], {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
-    if (!acc[date]) {
-      acc[date] = [];
-    }
-    acc[date].push(call);
-    return acc;
-  }, {});
+  if (error) {
+    return <div className="error">Error: {error}</div>;
+  }
 
   return (
     <div className="call-log">

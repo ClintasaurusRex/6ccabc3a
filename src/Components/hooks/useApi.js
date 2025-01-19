@@ -5,53 +5,63 @@ const useApi = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchCalls = async () => {
-      try {
-        setLoading(true);
-        const response = await fetch("https://aircall-api.onrender.com/activities");
-        const data = await response.json();
-        setCalls(data);
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchCalls();
-  }, []);
-
-  const missedCalls = calls.filter((call) => call.call_type === "missed");
-
-  const archiveCall = async (callId, archiveState) => {
+  const fetchCalls = async () => {
     try {
-      const response = await fetch(`https://aircall-api.onrender.com/activities/${callId}`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ is_archived: archiveState }),
-      });
-      if (response.ok) {
-        fetchCalls(); // Refresh the calls list after successful archive
-      }
-    } catch (err) {
-      setError(err.message);
+      setLoading(true);
+      const response = await fetch("https://aircall-api.onrender.com/activities");
+      const data = await response.json();
+      setCalls(data);
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setLoading(false);
     }
   };
 
+  const toggleArchive = async (callId) => {
+    try {
+      const call = calls.find((c) => c.id === callId);
+      await fetch(`https://aircall-api.onrender.com/activities/${callId}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ is_archived: !call.is_archived }),
+      });
+      fetchCalls();
+    } catch (error) {
+      setError(error.message);
+    }
+  };
+
+  const archiveAll = async () => {
+    const promises = calls
+      .filter((call) => !call.is_archived)
+      .map((call) => toggleArchive(call.id));
+    await Promise.all(promises);
+    fetchCalls();
+  };
+
+  const unarchiveAll = async () => {
+    const promises = calls.filter((call) => call.is_archived).map((call) => toggleArchive(call.id));
+    await Promise.all(promises);
+    fetchCalls();
+  };
+
+  useEffect(() => {
+    fetchCalls();
+  }, []);
+
   return {
     calls,
-    missedCalls,
     loading,
     error,
-    setCalls,
-    archiveCall,
+    fetchCalls,
+    toggleArchive,
+    archiveAll,
+    unarchiveAll,
   };
 };
 
-// const useApi = async () => {
+export default useApi;
 //   const [missed, setMissedCall] = useState(null);
 //   try {
 //     const res = await fetch(`https://aircall-api.onrender.com/activities`);
@@ -65,4 +75,4 @@ const useApi = () => {
 //   }
 //   return { missed, setMissedCall };
 // };
-export default useApi;
+// export default useApi;

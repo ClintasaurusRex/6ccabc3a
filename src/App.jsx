@@ -13,16 +13,13 @@ const App = () => {
     <div className="container">
       <Header />
 
-      {/* <Calls /> */}
-      {/* <div className="container-view">Some activities should be here</div> */}
       <main className="content">
         <CallLog />
       </main>
-      {/* <CallItem /> */}
-      <Footer />
-      {/* <footer className="footer-container">
+
+      <footer className="footer-container">
         <Footer />
-      </footer> */}
+      </footer>
     </div>
   );
 };
